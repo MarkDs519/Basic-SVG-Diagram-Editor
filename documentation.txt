@@ -1,0 +1,12 @@
+In the diagram editor, there is a note above to help draw a line. Double clicking will start drawing a line and one click will stop drawing the line. There might be a small glitch when initial dragging the line from rectangle to circle but that is not a problem. Dragging the shapes will fix it. There is no effect in dragging the shapes but sometimes connecting and dragging the ellipse and circle might show problem. This is not always the case. Other than that everything is fine.
+
+Initially clicking the buttons allow to drag the objects. Otherwise the drag will not work. After the line is connected, the objects can be dragged freely. This is because I wanted my design to be like this. 
+
+Below the diagrameditor, there is another editor where we can only resize and rotate the shapes. Well, only the rectangle be rotated 45 degrees. Circle need not to e rotated. 
+
+Clicking the buttons helps to draw the shape and then clicking the shapes helps to resize the shapes. The rotate will only work after the resize is called. Else it wont do anything. 
+
+I have tried doing resize, rotate and drag in one convas but I faced some issues while doing it. So i did them in different canvases. I have also tried connecting three objects but due to some glitches it causes problems. Sometimes, once in a blue moon it works. 
+
+Please refresh the webpage of Week 4 Tutorial Tests after opening else it will show that some are not working.
+ 

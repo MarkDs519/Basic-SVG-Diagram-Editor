@@ -1,0 +1,356 @@
+<html>
+
+<head>
+    <style>
+        @import url(style.css);
+        
+
+        #diagrameditor {
+            position: absolute;
+            left: 0;
+            top: 100;
+            width: 1000;
+            height: 600;
+            border: 1px solid black;
+            background: beige;
+        }
+
+        #diagrameditor2 {
+            position: absolute;
+            left: 0;
+            top: 900;
+            width: 1000;
+            height: 600;
+            border: 1px solid black;
+            background: beige;
+        }
+        /* drag button for rectangle */
+        .button {
+            position: absolute;
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            top: 15%;
+            right: 10.5%;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+         /* drag button for circle */
+         .button2 {
+            position: absolute;
+            border-radius: 4px;
+            background-color: blue;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            top: 30%;
+            right: 10.5%;
+        }
+
+        .button span2 {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span2:after {
+            content: '\00bb';
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button2:hover span {
+            padding-right: 25px;
+        }
+
+        .button2:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+
+        /* drag button for ellipse */
+        .button3 {
+            position: absolute;
+            border-radius: 4px;
+            background-color: green;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            top: 45%;
+            right: 10.5%;
+        }
+
+        .button span3 {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span3:after {
+            content: '\00bb';
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button3:hover span {
+            padding-right: 25px;
+        }
+
+        .button3:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        /* drag button for resize rectangle */
+        .button4 {
+            position: absolute;
+            border-radius: 4px;
+            background-color: blueviolet;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            top: 140%;
+            right: 10.5%;
+        }
+
+        .button span4 {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span4:after {
+            content: '\00bb';
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button4:hover span {
+            padding-right: 25px;
+        }
+
+        .button4:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        /* button for resize circle */
+        .button5 {
+            position: absolute;
+            border-radius: 4px;
+            background-color: orange;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            top: 155%;
+            right: 10.5%;
+        }
+
+        .button span5 {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span5:after {
+            content: '\00bb';
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button5:hover span {
+            padding-right: 25px;
+        }
+
+        .button5:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        /* button for resize ellipse */
+        .button6 {
+            position: absolute;
+            border-radius: 4px;
+            background-color: yellowgreen;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            top: 175%;
+            right: 10.5%;
+        }
+
+        .button span6 {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span6:after {
+            content: '\00bb';
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button6:hover span {
+            padding-right: 25px;
+        }
+
+        .button6:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        /* button to rotate rectangle */
+        .button7 {
+            position: absolute;
+            border-radius: 4px;
+            background-color: blueviolet;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            top: 197%;
+            right: 10.5%;
+        }
+
+        .button span7 {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span7:after {
+            content: '\00bb';
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button7:hover span {
+            padding-right: 25px;
+        }
+
+        .button7:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+
+    </style>
+    <script src="svgelement.js"></script>
+    <script src="observable.js"></script>
+    <script src="diagrameditor.js"></script>
+    <script src="diagrameditor.js.map"></script>
+
+</head>
+
+<body>
+
+    <h1> Diagram Editor </h1>
+    
+   
+    <svg id="diagrameditor">
+            <rect x= "200" width="800" height="600" style="fill:khaki;stroke-width:1;stroke:rgb(0,0,0)" onmouseover="evt.target.setAttribute('opacity', '0.5');" onmouseout="evt.target.setAttribute('opacity','1)');">
+    </svg>
+    <p><strong>Note: </strong>Double click to draw line and a single click to stop drawing</p>
+    <br />
+    
+    <button id = "clickme" class="button" onclick = "drag_rectangle()"><span>Drag Rect </span></button>
+    <button id = "clickme2" class="button2" onclick = "drag_circle()"><span>Drag Circle </span></button>
+    <button id = "clickme3" class="button3" onclick = "drag_ellipse()"><span>Drag Ellipse </span></button>
+
+    <svg id="diagrameditor2"></svg>
+    <p><strong>Note: </strong>Click the buttons to bring the shape and resize.</p>
+    <button id = "clickme4" class="button4" onclick = "resize_rectangle()"><span>Resize Rect </span></button>
+    <button id = "clickme5" class="button5" onclick = "resize_circle()"><span>Resize Circle </span></button>
+    <button id = "clickme6" class="button6" onclick = "resize_ellipse()"><span>Resize Ellipse </span></button>
+    <button id = "rotate45" class="button7" onclick = "rotate_rectangle45()"><span>Rotate Rect45 </span></button>
+    
+    
+</body>
+
+</html>
